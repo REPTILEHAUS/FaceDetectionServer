@@ -15,7 +15,7 @@ $ yum install jsoncpp-devel
 # Build and Usage
 
 ```sh
-$ make seeta    # 下载 SeetaFace 源码到 /src, 切换到指定版本并进行编译, 该过程需要 cmake3 支持
+$ make seeta    # 下载 SeetaFace 源码到 /src, 切换到指定版本并进行编译, 该过程需要 cmake3 支持.
 $ make faced    # 编译胶水部分 c++ 代码, 提供可供 golang 使用的 c 语法 lib.
 $ make goserver # 混合编译 golang/c++ 服务到单独二进制文件
 ```
@@ -46,3 +46,8 @@ Date: Wed, 12 Oct 2016 02:47:09 GMT
     ]
 }
 ```
+
+# Issues
+1. 我不想将 SeetaFace 源码下载/编译到 /src 下?
+
+需要手动修改 [https://github.com/mohanson/FaceDetectionServer/blob/master/libfaced/faced.cpp#L18](https://github.com/mohanson/FaceDetectionServer/blob/master/libfaced/faced.cpp#L18) 与 [https://github.com/mohanson/FaceDetectionServer/blob/master/Makefile#L1](https://github.com/mohanson/FaceDetectionServer/blob/master/Makefile#L1) 两处.
